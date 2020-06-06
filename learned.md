@@ -10,3 +10,4 @@ be styled on its own.
 
 - Nice tool allow using JavaScript to handle SQL Databases
 - When using datases, we must write `Migrations` so we can have the history, and it is gonna make easier to downgrade.
+- On creating migrations, it's necessary to be sure the correct order.
