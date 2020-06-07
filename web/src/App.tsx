@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import Home from './pages/home'
-import CreatePoint from './pages/createPoint'
+import Routes from './routes';
 
 function App() {
   return (
     <>
-      <Home title="Ecoleta"/>
-      <CreatePoint/>
+      <Routes/>
     </>
   );
 }
