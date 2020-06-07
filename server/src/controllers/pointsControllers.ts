@@ -23,18 +23,17 @@ class PointsController {
 
     async createItem(req: Request, res: Response ) {
         const {
-            image,
             name,
             email,
             whatsapp,
             city,
             uf,
             latitude,
-            longitute,
+            longitude,
             items
         } = req.body
     
-        const trx = await knex.transaction()
+        // const trx = await knex.transaction()
 
         const point = {
             image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
@@ -42,14 +41,14 @@ class PointsController {
             email,
             whatsapp,
             latitude,
-            longitute,
+            longitude,
             city,
             uf
         }
     
         // it returns a list of ids, of the document created
         // but will have only one
-        const idCreated = await trx('points').insert(point)
+        const idCreated = await knex('points').insert(point)
     
         const point_id = idCreated[0]
     
@@ -58,9 +57,9 @@ class PointsController {
             point_id
         }))
     
-        await trx('point_items').insert(pointItems).catch(err => console.log(err))
+        await knex('point_items').insert(pointItems).catch(err => console.log(err))
 
-        await trx.commit()
+        // await trx.commit()
     
         return res.json({
             id: point_id,
