@@ -1,0 +1,3 @@
+[submodule "react-native-ecoleta"]
+	path = react-native-ecoleta
+	url = https://github.com/gabrr/react-native-ecoleta.git
